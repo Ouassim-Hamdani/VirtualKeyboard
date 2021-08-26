@@ -2,7 +2,6 @@
 import cv2
 from cvzone.HandTrackingModule import HandDetector
 from time import sleep
-#from pynput.keyboard import Controller
 cap = cv2.VideoCapture(0)
 detector = HandDetector(detectionCon=0.8)
 keysText = [["A","Z","E","R","T","Y","U","I","O","P"],["Q","S","D","F","G","H","J","K","L","M"],["W","X","C","V","B","N"]]
@@ -31,7 +30,6 @@ def drawAll(img,list):
             cv2.putText(img,text,(pos[0]+5,pos[1]+50),cv2.FONT_HERSHEY_PLAIN,4,(255,255,255),3)
     return img
 pressedKeys = []
-#keyboard = Controller()
 while 1:
     ret,img = cap.read()
     img = cv2.flip(img,1)
@@ -75,15 +73,11 @@ while 1:
                                 pressedKeys.append(key.text)
                                 pressedKeys.append(key.text)
                                 print(pressedKeys)
-                                #keyboard.press(key.text)
-                                #keyboard.release(key.text)
                         except IndexError:
                             cv2.rectangle(img,(x,y),(x +w,y+h),(0,0,255),cv2.FILLED)
                             cv2.putText(img,key.text,(x+5,y+50),cv2.FONT_HERSHEY_PLAIN,4,(255,255,255),3)
                             pressedKeys.append(key.text)
                             print(pressedKeys)
-                            #keyboard.press(key.text) Working on windows brk
-                            #keyboard.release(key.text)
                         sleep(0.15)
     cv2.imshow("Camera",img)
     cv2.waitKey(1)
