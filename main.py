@@ -2,7 +2,7 @@
 import cv2
 from cvzone.HandTrackingModule import HandDetector
 from time import sleep
-from pynput.keyboard import Controller
+#from pynput.keyboard import Controller
 cap = cv2.VideoCapture(0)
 detector = HandDetector(detectionCon=0.8)
 keysText = [["A","Z","E","R","T","Y","U","I","O","P"],["Q","S","D","F","G","H","J","K","L","M"],["W","X","C","V","B","N"]]
@@ -31,7 +31,7 @@ def drawAll(img,list):
             cv2.putText(img,text,(pos[0]+5,pos[1]+50),cv2.FONT_HERSHEY_PLAIN,4,(255,255,255),3)
     return img
 pressedKeys = []
-keyboard = Controller()
+#keyboard = Controller()
 while 1:
     ret,img = cap.read()
     img = cv2.flip(img,1)
