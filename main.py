@@ -12,9 +12,6 @@ class Key():
         self.pos = pos
         self.text = text
         self.size = size
-    
-
-
 y = 50
 for row in keysText:
     l = []
@@ -87,9 +84,6 @@ while 1:
                             print(pressedKeys)
                             #keyboard.press(key.text) Working on windows brk
                             #keyboard.release(key.text)
-
-                        
                         sleep(0.15)
-    
     cv2.imshow("Camera",img)
     cv2.waitKey(1)
